@@ -1,0 +1,78 @@
+[user]
+	name = hiromitsu matsuoka
+	email = matsuoka@ispern.com
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = auto
+  grep = auto
+[push]
+  default = simple
+[core]
+	excludesfile = /Users/hiromitsu/.gitignore
+	editor = /usr/bin/vim
+  autocrlf = input
+	precomposeunicode = true
+	excludesfile = /Users/hiromitsu/.dotfiles/.gitignore.global
+[alias]
+  # http://oli.jp/2012/git-powerup/
+  # http://blog.blindgaenger.net/advanced_git_aliases.html
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+  b = branch -a
+  br = browse-remote
+  ci = commit
+  co = checkout
+  d = diff
+  dc = diff --cached
+  di = diff
+  dic = diff --cached
+  f = fetch --prune
+  fa = fetch --all
+  fs = !git f && git su
+  ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo $1 >> .gitignore
+  info = remote show origin
+  l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+  ll = log --stat --abbrev-commit
+  ln = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
+  lp = log --oneline -n 20 -p
+  ls = log --stat --abbrev-commit -n 1 # display previous log
+  s = status --short --branch
+  st = status
+	sta = stash
+  su = submodule update
+[apply]
+	whitespace = nowarn
+[branch]
+	autosetupmerge = true
+[mergetool]
+	keepBackup = true
+	prompt = false
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[merge]
+	tool = Kaleidoscope
+  ff = false
+[pull]
+	rebase = true
+
+# git-browse-remote
+# http://subtech.g.hatena.ne.jp/motemen/20120917/1347889804
+[web]
+  browser = chrome
+[browse-remote "github.com"]
+  top = https://{host}/{path}
+  ref = https://{host}/{path}/tree/{short_ref}
+  rev = https://{host}/{path}/commit/{commit}
+[browse-remote "git.wiz-net.com"]
+  top = https://{host}/{path}
+  ref = https://{host}/{path}/tree/{short_ref}
+  rev = https://{host}/{path}/commit/{commit}

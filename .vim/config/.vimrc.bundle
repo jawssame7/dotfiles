@@ -1,0 +1,73 @@
+filetype off
+
+set rtp+=~/.vim/.bundle/neobundle.vim
+if has('vim_starting')
+  set runtimepath+='~/.vim/.bundle/neobundle.vim'
+    call neobundle#rc(expand('~/.vim/.bundle'))
+endif
+
+" プログラミング {{{
+    " vim内でのgitの操作
+    NeoBundle 'motemen/git-vim'
+
+    " javascript syntax and indent plugins
+    NeoBundle 'pangloss/vim-javascript'
+
+    " ソースコード上のメソッド宣言、変数宣言の一覧を表示
+    NeoBundle 'taglist.vim'
+" }}}
+
+" 編集 {{{
+    " テキストを括弧とかで囲むやつ
+    NeoBundle 'tpope/vim-surround'
+    NeoBundle 'tpope/vim-repeat'
+
+    " emmet
+    NeoBundle 'mattn/emmet-vim'
+
+   " コメント処理
+   NeoBundle 'scrooloose/nerdcommenter.git'
+" }}}
+
+" 補完 {{{
+
+    " 最強の補完プラグイン
+    NeoBundle 'Shougo/neocomplcache'
+
+    " スニペット補完
+    NeoBundle 'Shougo/neosnippet'
+
+    " スニペット集
+    NeoBundle 'Shougo/neosnippet-snippets'
+    NeoBundle 'honza/vim-snippets'
+
+" }}}
+
+" ユーティリティ {{{
+    " vimfiler
+    NeoBundle 'Shougo/vimfiler'
+
+    " vimproc
+    NeoBundle 'Shougo/vimproc.vim', {
+          \ 'build' : {
+          \     'mac' : 'make -f make_mac.mak',
+          \     'unix' : 'make -f make_unix.mak'
+          \    },
+          \ }
+
+    " vim内でshellを使える
+    NeoBundle 'Shougo/vimshell'
+
+    " powerlineみたいなやつ
+    NeoBundle 'itchyny/lightline.vim'
+" }}}
+
+" Unite {{{
+  " unite.vim
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'tsukkee/unite-help'
+  NeoBundle 'h1mesuke/unite-outline'
+  NeoBundle 'thinca/vim-unite-history'
+  NeoBundle 'tsukkee/unite-tag'
+  NeoBundle 'choplin/unite-vim_hacks'
+" }}}
