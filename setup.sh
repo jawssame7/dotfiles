@@ -3,7 +3,7 @@
 DIR=`dirname $0`
 
 if [ ! -n "$DOTFILES_DIR" ]; then
-  DOTFILES_DIR=~/.dotfiles
+  DOTFILES_DIR=$HOME/.dotfiles
 fi
 
 # dotfile dir
@@ -13,12 +13,12 @@ DOT_FILES=( .zshrc .gemrc .gitconfig .npmrc .tmux.conf .tmuxinator .vim .vimrc .
 
 for file in ${DOT_FILES[@]}
 do
-  ln -sf $DOTFILES_DIR/$file $HOME/
+  [ ! -e $HOME/$file ] && ln -s $DOTFILES_DIR/$file $HOME/$file
 done
 
 # setup powerline custom config
-[ ! -d ~/.config ] && mkdir ~/.config
-ln -sf $DOTFILES_DIR/.config/powerline ~/.config/powerline
+[ ! -d $HOME/.config ] && mkdir $HOME/.config
+[ ! -e $HOME/.config/powerline ] && ln -s $DOTFILES_DIR/.config/powerline $HOME/.config/powerline
 
 # install oh-my-zsh
 [ ! -d ~/.oh-my-zsh ] && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
