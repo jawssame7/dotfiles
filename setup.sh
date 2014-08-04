@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=`pwd`
+DIR=`dirname $0`
 
 if [ ! -n "$DOTFILES_DIR" ]; then
   DOTFILES_DIR=~/.dotfiles
@@ -28,5 +28,6 @@ ln -sf $DOTFILES_DIR/.config/powerline ~/.config/powerline
 
 # Install HomeBrew
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+cd $DOTFILES_DIR
 brew bundle
 brew cask alfred link
