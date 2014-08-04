@@ -24,7 +24,7 @@ export PATH=$SENCHA_SDK:$PATH
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-nodebrew use v0.10.25
+nodebrew use v0.10.26
 
 # rbenv
 eval "$(rbenv init - zsh)"

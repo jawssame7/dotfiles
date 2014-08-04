@@ -1,5 +1,7 @@
 setopt complete_aliases
 
+alias vi="vim"
+
 # zsh
 alias zshconfig="vi ~/.zshrc"
 alias myzsh="vi $DOTFILES/zsh/"
