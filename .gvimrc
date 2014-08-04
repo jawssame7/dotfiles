@@ -6,6 +6,6 @@ set columns=180000" 横幅
 set guioptions-=m
 set guioptions-=T
 
+colorscheme "ir_black"
 set guifontwide=Source\ Code\ Pro\ Light:h20
 set guifont=Source\ Code\ Pro\ Light:h20
-colorscheme "ir_black"

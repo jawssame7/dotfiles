@@ -27,6 +27,9 @@ endif
 
    " コメント処理
    NeoBundle 'scrooloose/nerdcommenter.git'
+
+   " .editorconfig
+   NeoBundle 'editorconfig/editorconfig-vim'
 " }}}
 
 " 補完 {{{
