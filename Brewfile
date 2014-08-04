@@ -3,6 +3,7 @@ update
 tap homebrew/dupes
 tap josegonzalez/php
 tap caskroom/cask
+tap homebrew/versions
 
 install git
 install git-flow
@@ -15,7 +16,7 @@ install wget
 install ssh-copy-id
 install apple-gcc42
 
-install play
+install play22
 install sbt
 
 install mysql
@@ -27,7 +28,7 @@ install memcached
 install ruby-build
 install rbenv
 install rbenv-gemset
-install rbenv-rehash
+install readline
 install php-build
 install phpenv
 install ffmpeg
@@ -40,7 +41,6 @@ install jpeg
 install libpng
 install mcrypt
 install zlib
-install readline
 install subversion
 install vim
 
@@ -50,9 +50,6 @@ install psutils
 install vert.x
 
 install phantomjs
-install selenium-server-standalon
-
-install docker
 
 install brew-cask
 cask install adobe-creative-cloud
