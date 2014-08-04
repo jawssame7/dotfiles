@@ -27,7 +27,9 @@ ln -sf $DOTFILES_DIR/.config/powerline ~/.config/powerline
 [ ! -d ~/.vim/.bundle ] && mkdir -p ~/.vim/.bundle && git clone git://github.com/Shougo/neobundle.vim ~/.vim/.bundle/neobundle.vim && echo "you should run following command to setup plugins ->  vim -c ':NeoBundleInstall'"
 
 # Install HomeBrew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-cd $DOTFILES_DIR
-brew bundle
-brew cask alfred link
+if [ `uname` = "Darwin" ]; then
+  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  cd $DOTFILES_DIR
+  brew bundle
+  brew cask alfred link
+fi

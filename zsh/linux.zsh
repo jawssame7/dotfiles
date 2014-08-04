@@ -4,8 +4,6 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export TERM="xterm-256color"
 
 alias ls='ls -alh --color'
-alias vi='/usr/local/bin/vim'
-alias vim='/usr/local/bin/vim'
 
 export PATH
 
